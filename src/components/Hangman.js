@@ -10,7 +10,7 @@ async function getWord(mode) {
     if(!mode) mode="chill"
     else if(mode ==='1') mode="god"
     else if(mode ==='0') mode="chill"
-    const res=await axios.get(`http://localhost:8080/${mode}Mode/getRandomWord`)
+    const res=await axios.get(`https://clean-pilot-369605.el.r.appspot.com/${mode}Mode/getRandomWord`)
     console.log(res.data.ingredient)
     return res.data.ingredient
  }
