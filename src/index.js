@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 // import Header from './components/Header';
 // import Keyboard from './components/molecules/Keyboard';
-import Hangman from './components/Hangman';
+// import Hangman from './components/Hangman';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

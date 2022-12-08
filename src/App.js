@@ -7,7 +7,7 @@ import React from 'react';
 // import LoginPopup from './LoginPopup.js';
 import MainPage from './components/mainPage';
 import Hangman from './components/Hangman';
-import { createBrowserRouter, Route,RouterProvider } from 'react-router-dom';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {

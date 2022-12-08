@@ -17,7 +17,7 @@ async function getWord(mode) {
 
 function Hangman() {
     const [searchParams] = useSearchParams();
-    const [mode, setMode] = useState(searchParams.get("mode"));
+    const [mode] = useState(searchParams.get("mode"));
   const [wordToGuess, setWordToGuess] = useState("")
   const [guessedLetters, setGuessedLetters] = useState([])
 
