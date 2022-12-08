@@ -12,6 +12,7 @@
           fontWeight: "bold",
           textTransform: "uppercase",
           fontFamily: "monospace",
+          overflowY:"auto"
         }}
       >
         {wordToGuess.split("").map((letter, index) => (

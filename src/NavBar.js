@@ -1,13 +1,7 @@
 import React from 'react';
 import {
-    Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Button,
   } from 'reactstrap';
 //   import LoginPopup from './LoginPopup';
 
@@ -31,16 +25,16 @@ import {
 
 
     render() {
-        const { call } = this.props;
+        // const { call } = this.props;
         return (
         
             <div>
                 <Navbar color="dark" dark>
-                    <NavbarToggler className="ml-auto" onClick={this.toggle}/>
-                    <NavbarBrand href="/" className="mx-auto">
-                    Hangman
+                    {/* <NavbarToggler className="ml-auto" onClick={this.toggle}/> */}
+                    <NavbarBrand href="/" className="mx-auto" style={{fontSize:'2rem'}}>
+                    Foodman
                     </NavbarBrand>
-                    <Button className="mr-auto" onClick={call}>Login</Button>
+                    {/* <Button className="mr-auto" onClick={call}>Login</Button>
                     <Collapse isOpen={!this.state.toggleNavbar} navbar>
                     <Nav navbar>
                         <NavItem>
@@ -52,7 +46,7 @@ import {
                         </NavLink>
                         </NavItem>
                     </Nav>
-                    </Collapse>
+                    </Collapse> */}
                 </Navbar>
             </div>
         );

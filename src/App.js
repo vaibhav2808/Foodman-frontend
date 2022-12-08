@@ -1,24 +1,26 @@
 // import logo from './logo.svg';
 import './App.css';
 // import { MDBSwitch } from 'mdb-react-ui-kit';
-
+import {useState} from "react";
 import React from 'react';
 // import NavBar from './NavBar.js';
 // import LoginPopup from './LoginPopup.js';
 import MainPage from './components/mainPage';
 import Hangman from './components/Hangman';
-import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+// import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Modal from "./components/Modal"
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainPage />,
-  },
-  {
-    path: '/play',
-    element: <Hangman />,
-  },
-])
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <MainPage />,
+//   },
+//   {
+//     path: '/play',
+//     element: <Hangman />,
+//   },
+// ])
 
 // import {
 //   Collapse,
@@ -32,6 +34,8 @@ const router = createBrowserRouter([
 
 function App() {
   // const [collapsed, setCollapsed] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [gameText, setGameText] = useState("");
 
   // const toggleNavbar = () => setCollapsed(!collapsed);
   return (
@@ -41,26 +45,33 @@ function App() {
         
         <NavbarToggler onClick={toggleNavbar} className="ml-auto" />
         <NavbarBrand href="/" className="mx-auto">
-          Hangman
+        Hangman
         </NavbarBrand>
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
               <NavLink href="/login/">Login</NavLink>
-            </NavItem>
+              </NavItem>
             <NavItem>
               <NavLink href="/scores/">
-                Scores
+              Scores
               </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar> */}
+              </NavItem>
+              </Nav>
+              </Collapse>
+            </Navbar> */}
 
       {/* <LoginPopup /> */}
       {/* <MainPage /> */}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <Router>
+        <Routes>
+          <Route  path="/" element={<MainPage/>}/>
+          <Route  path="/play" element={<Hangman setShowModal={setShowModal} setGameText={setGameText}/>}/>
+        </Routes>
+      </Router>
       
+      {showModal && <Modal setShowModal={setShowModal} gameText={gameText}></Modal>}
        
       </div>
     </div>

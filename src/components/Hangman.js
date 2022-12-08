@@ -4,6 +4,7 @@ import { HangmanWord } from "./molecules/HangmanWord"
 import { Keyboard } from "./molecules/Keyboard"
 import axios from "axios"
 import { useSearchParams } from "react-router-dom"
+import NavBar from "../NavBar"
 
 async function getWord(mode) {
     console.log("mode",mode)
@@ -15,7 +16,7 @@ async function getWord(mode) {
     return res.data.ingredient
  }
 
-function Hangman() {
+function Hangman({setShowModal, setGameText}) {
     const [searchParams] = useSearchParams();
     const [mode] = useState(searchParams.get("mode"));
   const [wordToGuess, setWordToGuess] = useState("")
@@ -79,7 +80,12 @@ function Hangman() {
     }
   }, [])
 
+  useEffect(()=>{ if(isWinner) setGameText("YOU WON!!!"); else setGameText("YOU LOSE:(((("); setShowModal(isWinner || isLoser)}, [isWinner, isLoser, setGameText, setShowModal])
+
   return (
+    <>
+    <NavBar/>
+
     <div
       style={{
         maxWidth: "800px",
@@ -100,7 +106,7 @@ function Hangman() {
         guessedLetters={guessedLetters}
         wordToGuess={wordToGuess}
       />
-      <div style={{ alignSelf: "stretch" }}>
+      <div style={{ alignSelf: "stretch", justifySelf:"stretch" }}>
         <Keyboard
           disabled={isWinner || isLoser}
           activeLetters={guessedLetters.filter(letter =>
@@ -111,6 +117,7 @@ function Hangman() {
         />
       </div>
     </div>
+    </>
   )
 }
 

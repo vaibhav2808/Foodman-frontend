@@ -3,6 +3,7 @@ import { Card, CardBody, CardTitle, Button, Media, Col, Row} from 'reactstrap';
 import { MDBSwitch } from 'mdb-react-ui-kit';
 //importing typewriter-effect
 import Typewriter from "typewriter-effect";
+import { Link } from 'react-router-dom';
 // import './App.css';
   
 class MainPage extends React.Component{
@@ -77,23 +78,24 @@ class MainPage extends React.Component{
                 <br />
                 <br />
                 <Button className="pt-3 pb-3 rounded-circle" color="light">
-                  <a href={`/play?mode=${this.state.mode}`}><h4>Play</h4></a>
+                  <Link to={`/play?mode=${this.state.mode}`}><h4>Play</h4></Link>
                 </Button>
                 <br />
                 <br />
                 <br />
                 <br />
                 <Row>
-                  <Col align="right">Chill Mode</Col>
-                  <Col className="col-sm-1">
+                  <Col align="right" style={{fontSize:'2rem'}}>Chill Mode</Col>
+                  <Col className="col-sm-1" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                     <MDBSwitch
                       id="flexSwitchCheckDefault"
                       label=""
                       checked={this.state.mode}
                       onChange={this.toggle}
+                      style={{height:"25px", width:"70px"}}
                     />
                   </Col>
-                  <Col align="left">God Mode</Col>
+                  <Col align="left" style={{fontSize:'2rem'}}>God Mode</Col>
                 </Row>
               </CardBody>
             </Card>
