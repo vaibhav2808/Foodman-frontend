@@ -63,7 +63,7 @@ const RIGHT_LEG = (
       background: "black",
       position: "absolute",
       top: "115px",
-      right: "-40px",
+      right: "-45px",
       rotate: "60deg",
       transformOrigin: "left bottom",
     }}
