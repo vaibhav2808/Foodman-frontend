@@ -1,4 +1,4 @@
-# cgas-frontend
+# Foodman-frontend
 
 Fooman is a fun and challenging word guessing game written in React.js. The inclusion of two modes, Chill and God, adds an extra layer of difficulty and variety to the game, allowing players to choose the level of challenge that they want to face. I hope you have a lot of fun playing Fooman! It is deployed at https://foodmancgas.netlify.app/
 
